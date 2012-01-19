@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<quest name="Quest One: The Search for how the fuck to do this.">
+
+	<combat x="5" y="6" actBy="Bit 1||Bit 2">
+		<monster />
+		<monster />
+		<loot></loot>
+			<activates>Bit 3</activates>
+			<deactivates>Bit 4</deactivates>
+	</combat>
+	
+	<plot x="0" y="0" actBy="" actBy="Bit 1&&Bit 2&&Bit 3&&Bit 4" face="wtf.jpg">
+		<text>Lorem Ipsum blah blah blah</text>
+		<loot></loot>
+		<activates>Bit 1</activates>
+	</plot>
+	
+	<marker x="5" y="6" actBy="Bit 1||Bit 2" deactBy="Bit 3&&Bit 4">The Quest for a thing</marker>
+	
+	<bit>Bit 1</bit>
+	<bit>Bit 2</bit>
+	<bit>Bit 3</bit>
+	<bit>Bit 4</bit>
+	
+	<journal quest="The Quest for a thing" trig="Bit 1">Lorem Ipsum blah blah blah</journal>
+</quest>
