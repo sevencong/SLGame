@@ -8,4 +8,7 @@ public class Monster {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Monster() {
+		//placeholder constructor
+	}
 }

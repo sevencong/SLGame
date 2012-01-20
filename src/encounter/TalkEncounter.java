@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.Attributes;
 
 import quest.InvalidQuestFileException;
 
@@ -23,6 +24,10 @@ public class TalkEncounter extends PlotEncounter{
 			}
 		}
 		face = plot.getAttributes().getNamedItem("face").getNodeValue();
+	}
+	
+	public TalkEncounter (Attributes atts) {
+		super(Integer.parseInt(atts.getValue("x")), Integer.parseInt(atts.getValue("y")), atts.getValue("actBy"));
 	}
 	
 	public ArrayList<String> getText() {

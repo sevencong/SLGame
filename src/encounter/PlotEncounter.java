@@ -15,17 +15,21 @@ import quest.InvalidQuestFileException;
 public class PlotEncounter {
 	private int x;
 	private int y;
-	private String id;
 	private String activatedBy;
 	private ArrayList<Item> loot;
 	private ArrayList<String> activates;
 	private ArrayList<String> deactivates;
 	
-	public PlotEncounter (int X, int Y, String ID, String act) {
+	public PlotEncounter (int X, int Y, String act) {
 		x = X;
 		y = Y;
-		id = ID;
 		activatedBy = act;
+	}
+	
+	public PlotEncounter () {
+		x = 0;
+		y = 0;
+		activatedBy = "";
 	}
 	
 	public PlotEncounter (Node plot) throws InvalidQuestFileException {
@@ -33,7 +37,6 @@ public class PlotEncounter {
 		
 		x = Integer.parseInt(atts.getNamedItem("x").getNodeValue());
 		y = Integer.parseInt(atts.getNamedItem("y").getNodeValue());
-		id = plot.getNodeName();
 		activatedBy = atts.getNamedItem("actBy").getNodeValue();
 		
 		
@@ -96,5 +99,17 @@ public class PlotEncounter {
 		}
 		
 		return current;
+	}
+	
+	public void addLoot(Item it) {
+		loot.add(it);
+	}
+	
+	public void activates(String ac) {
+		activates.add(ac);
+	}
+	
+	public void deactivates(String ac) {
+		deactivates.add(ac);
 	}
 }

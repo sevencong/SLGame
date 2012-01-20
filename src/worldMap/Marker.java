@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+import org.xml.sax.Attributes;
 
 public class Marker {
 	private int x;
@@ -28,6 +29,10 @@ public class Marker {
 		activatedBy = atts.getNamedItem("actBy").getNodeValue();
 	}
 	
+	public Marker(Attributes atts) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Boolean checkActive (HashMap<String, Boolean> bits) {
 		Boolean current = null;
 		
