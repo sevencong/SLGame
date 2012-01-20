@@ -32,6 +32,10 @@ public class Marker {
 	public Marker(Attributes atts) {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public void setQuestName(String str) {
+		questName = str;
+	}
 
 	public Boolean checkActive (HashMap<String, Boolean> bits) {
 		Boolean current = null;

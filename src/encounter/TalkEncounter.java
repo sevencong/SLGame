@@ -9,7 +9,6 @@ import org.xml.sax.Attributes;
 import quest.InvalidQuestFileException;
 
 public class TalkEncounter extends PlotEncounter{
-	
 
 	private ArrayList<String> text;
 	private String face;
@@ -24,6 +23,10 @@ public class TalkEncounter extends PlotEncounter{
 			}
 		}
 		face = plot.getAttributes().getNamedItem("face").getNodeValue();
+	}
+	
+	public void addText(String str) {
+		text.add(str);
 	}
 	
 	public TalkEncounter (Attributes atts) {
