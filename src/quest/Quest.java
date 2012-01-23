@@ -40,32 +40,11 @@ public class Quest {
 
 	public Quest (String fileName) throws IOException, ParserConfigurationException, SAXException, InvalidQuestFileException {
 			
-		loadFromFile(new File(fileName));
+		loadFromFile(new File(fileName));	//set up and parse xml file
 		encounters = handler.encounters;
 		questBits = handler.questBits;
 		markers = handler.markers;
 		entries = handler.entries;
-		/*Document doc = loadFromFile(new File(fileName));
-			NodeList nodes = doc.getElementsByTagName("bit");
-			for (int a = 0; a < nodes.getLength(); a++) {
-				questBits.put(nodes.item(a).getNodeName(), false);
-			}
-			nodes = doc.getElementsByTagName("marker");
-			for (int a = 0; a < nodes.getLength(); a++) {
-				markers.add(new questMarker(nodes.item(a)));
-			}
-			nodes = doc.getElementsByTagName("plot");
-			for (int a = 0; a < nodes.getLength(); a++) {
-				encounters.add(new TalkEncounter(nodes.item(a)));
-			}
-			nodes = doc.getElementsByTagName("combat");
-			for (int a = 0; a < nodes.getLength(); a++) {
-				encounters.add(new CombatEncounter(nodes.item(a)));
-			}
-			nodes = doc.getElementsByTagName("journal");
-			for (int a = 0; a < nodes.getLength(); a++) {
-				entries.add(new JournalEntry(nodes.item(a)));
-			}*/
 	}
 		
 	public ArrayList<PlotEncounter> getEncounters() {

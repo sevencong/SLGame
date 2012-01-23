@@ -6,4 +6,8 @@ public class Item {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Item() {
+		// TODO Auto-generated constructor stub
+	}
+
 }

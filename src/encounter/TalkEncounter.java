@@ -19,6 +19,7 @@ public class TalkEncounter extends PlotEncounter{
 		NodeList nodes = plot.getChildNodes();
 		for (int a = 0; a < nodes.getLength(); a++) {
 			if (nodes.item(a).getNodeName().equals("text")) {
+				System.out.println("I love penis");
 				text.add(nodes.item(a).getNodeValue());
 			}
 		}
