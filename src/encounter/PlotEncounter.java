@@ -24,36 +24,18 @@ public class PlotEncounter {
 		x = X;
 		y = Y;
 		activatedBy = act;
+                loot = new ArrayList<Item>();
+                activates = new ArrayList<String>();
+                deactivates = new ArrayList<String>();
 	}
 	
 	public PlotEncounter () {
 		x = 0;
 		y = 0;
 		activatedBy = "";
-	}
-	
-	public PlotEncounter (Node plot) throws InvalidQuestFileException {
-		NamedNodeMap atts = plot.getAttributes();
-		
-		x = Integer.parseInt(atts.getNamedItem("x").getNodeValue());
-		y = Integer.parseInt(atts.getNamedItem("y").getNodeValue());
-		activatedBy = atts.getNamedItem("actBy").getNodeValue();
-		
-		
-		NodeList list = plot.getChildNodes();
-		Node current;
-		String name;
-		for (int a = 0; a < list.getLength(); a++) {
-			current = list.item(a);
-			name = current.getNodeName();
-			switch (name.charAt(0)) {
-				case 'l':	loot.add(new Item(current.getNodeValue())); break;
-				case 'a':	activates.add(current.getNodeValue()); break;
-				case 'd':	deactivates.add(current.getNodeValue()); break;
-				case 't':	break;
-				default: throw new InvalidQuestFileException("Invalid plot encounter " + id);
-			}
-		}
+                loot = new ArrayList<Item>();
+                activates = new ArrayList<String>();
+                deactivates = new ArrayList<String>();
 	}
 	
 	public boolean isNear (int X, int Y, HashMap<String, Boolean> bits) {
@@ -66,10 +48,6 @@ public class PlotEncounter {
 	
 	public int getY() {
 		return y;
-	}
-	
-	public String getId() {
-		return id;
 	}
 	
 	public Boolean checkActive (HashMap<String, Boolean> bits) {

@@ -13,25 +13,13 @@ public class TalkEncounter extends PlotEncounter{
 	private ArrayList<String> text;
 	private String face;
 	
-	public TalkEncounter (Node plot) throws InvalidQuestFileException {
-		super(plot);
-		
-		NodeList nodes = plot.getChildNodes();
-		for (int a = 0; a < nodes.getLength(); a++) {
-			if (nodes.item(a).getNodeName().equals("text")) {
-				System.out.println("I love penis");
-				text.add(nodes.item(a).getNodeValue());
-			}
-		}
-		face = plot.getAttributes().getNamedItem("face").getNodeValue();
-	}
-	
 	public void addText(String str) {
 		text.add(str);
 	}
 	
 	public TalkEncounter (Attributes atts) {
 		super(Integer.parseInt(atts.getValue("x")), Integer.parseInt(atts.getValue("y")), atts.getValue("actBy"));
+                text = new ArrayList<String>();
 	}
 	
 	public ArrayList<String> getText() {
